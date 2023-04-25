@@ -6,14 +6,12 @@
 /*   By: takumasaokamoto <takumasaokamoto@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 18:56:03 by takumasaoka       #+#    #+#             */
-/*   Updated: 2023/04/16 18:56:04 by takumasaoka      ###   ########.fr       */
+/*   Updated: 2023/04/16 21:27:15 by takumasaoka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
 #include<string>
-
-using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -22,7 +20,10 @@ int main(int argc, char *argv[])
     int i;
 
     if (argc == 1)
-        return (1);
+    {
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+        return (0);
+    }
     i = 1;
     while (i < argc)
     {
@@ -30,10 +31,10 @@ int main(int argc, char *argv[])
         tmp = s1;
         while(*s1)
         {
-            *s1 = toupper(*s1);
+            *s1 = std::toupper(*s1);
             s1++;
         }
-        cout << tmp;
+        std::cout << tmp;
         i ++;
     }
 }

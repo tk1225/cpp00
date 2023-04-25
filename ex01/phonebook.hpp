@@ -6,7 +6,7 @@
 /*   By: takumasaokamoto <takumasaokamoto@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 18:55:47 by takumasaoka       #+#    #+#             */
-/*   Updated: 2023/04/16 18:55:48 by takumasaoka      ###   ########.fr       */
+/*   Updated: 2023/04/16 21:43:45 by takumasaoka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include<string>
 #include <iomanip>
 #include "contact.hpp"
-
-using namespace std;
 
 class PhoneBook
 {

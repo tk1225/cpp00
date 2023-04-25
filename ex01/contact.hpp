@@ -6,7 +6,7 @@
 /*   By: takumasaokamoto <takumasaokamoto@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 18:55:59 by takumasaoka       #+#    #+#             */
-/*   Updated: 2023/04/16 18:56:00 by takumasaoka      ###   ########.fr       */
+/*   Updated: 2023/04/16 21:28:47 by takumasaoka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,26 @@
 #include<string>
 #include <iomanip>
 
-using namespace std;
-
 class Contact
 {
     private:
     int    index;
-    string first_name;
-    string last_name;
-    string nickname;
-    string phone_number;
-    string darkest_secret;
-    string _proc_string_display(string s);
+    std::string first_name;
+    std::string last_name;
+    std::string nickname;
+    std::string phone_number;
+    std::string darkest_secret;
+    std::string _proc_string_display(std::string s);
 
     public:
     Contact();
     ~Contact();
     void set_info(
-    string  first_name,
-    string  last_name,
-    string  nickname,
-    string  phone_number,
-    string  darkest_secret
+    std::string  first_name,
+    std::string  last_name,
+    std::string  nickname,
+    std::string  phone_number,
+    std::string  darkest_secret
     );
     void display(int index);
 };

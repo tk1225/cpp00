@@ -6,7 +6,7 @@
 /*   By: takumasaokamoto <takumasaokamoto@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 18:55:56 by takumasaoka       #+#    #+#             */
-/*   Updated: 2023/04/16 18:55:57 by takumasaoka      ###   ########.fr       */
+/*   Updated: 2023/04/17 11:06:25 by takumasaoka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 class ReadLine
 {
     private:
-    string _input;
-    string _input_form(string input_content)
+    std::string _input;
+    std::string _input_form(std::string input_content)
     {
-        cout << ">";
-        cout << input_content;
-        cout << "を入力してください" << endl;
-        if(!getline(cin, _input)) exit(0);
+        std::cout << ">";
+        std::cout << input_content;
+        std::cout << "を入力してください" << std::endl;
+        if(!std::getline(std::cin, _input)) exit(0);
         if (_input == "")
         {
-            cout << "もう一度入力してください" << endl;
+            std::cout << "もう一度入力してください" << std::endl;
             return _input_form(input_content);
         }
         return _input;
@@ -35,8 +35,8 @@ class ReadLine
     ReadLine(){
         while (1)
         {
-            cout << ">";
-            if(!getline(cin, _input)) break;
+            std::cout << ">";
+            if(!std::getline(std::cin, _input)) break;
             if (_input == "EXIT")
                 exit(0);
             else if (_input == "ADD")
@@ -54,20 +54,20 @@ class ReadLine
             else if (_input == "SEARCH")
             {
                 _pb.show_all_lst();
-                string  inputNum = _input_form("input index");
+                std::string  inputNum = _input_form("input index");
                 int     index;
 
                 try
                 {
-                    index = stoi(inputNum);
+                    index = std::stoi(inputNum);
                 }
-                catch (const invalid_argument& ex)
+                catch (const std::invalid_argument& ex)
                 {
-                    cerr << ex.what() << endl;
+                    std::cerr << ex.what() << std::endl;
                 }
-                catch (const out_of_range& ex)
+                catch (const std::out_of_range& ex)
                 {
-                    cerr << ex.what() << endl;
+                    std::cerr << ex.what() << std::endl;
                 }
                 _pb.search_lst(index);
             }
@@ -77,7 +77,7 @@ class ReadLine
 
 int main(int argc, char *argv[])
 {
-    cout << "Hello, starting phone book program" << endl;
+    std::cout << "Hello, starting phone book program" << std::endl;
     ReadLine();
 	return 0;
 }

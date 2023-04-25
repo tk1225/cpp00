@@ -6,15 +6,13 @@
 /*   By: takumasaokamoto <takumasaokamoto@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 18:55:49 by takumasaoka       #+#    #+#             */
-/*   Updated: 2023/04/16 18:55:50 by takumasaoka      ###   ########.fr       */
+/*   Updated: 2023/04/17 11:06:41 by takumasaoka      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
 #include<string>
 #include "phonebook.hpp"
-
-using namespace std;
 
 int PhoneBook::index = 0;
 
@@ -32,18 +30,18 @@ void PhoneBook::show_all_lst()
     i = 0;
     while (i < this->index)
     {
-        cout << "-------------------------------" << endl;
+        std::cout << "-------------------------------" << std::endl;
         this->_contact_lst[i].display(i);
         i++;
     }
-    cout << "-------------------------------" << endl;
+    std::cout << "-------------------------------" << std::endl;
 }
 
 void PhoneBook::search_lst(int target)
 {
     if (target > 7)
     {
-        cerr << "index out of range" << endl;
+        std::cerr << "index out of range" << std::endl;
         return;
     }
     this->_contact_lst[target].display(target);
